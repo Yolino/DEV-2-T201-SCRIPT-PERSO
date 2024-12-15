@@ -25,7 +25,7 @@ Pré-télécharger les fichiers .py dans le dossier src
 
 ## Fonctionnalités
 
-1. Rechercher des données ( on peut faire des recherches en fonction des catégories ainsi que faire une recherche sur base d'une plage de prix)
-2. Trier les données (on peut trier les données des fichiers csv merger sur un tri asc ou dsc)
-3. Générer unn rapport global (on peut faire un rapport global sur base des fichiers csv merger)
+1. Rechercher des données (On peut faire des recherches en fonction des catégories ainsi que faire une recherche sur base d'une plage de prix. On peut aussi créer des rapports sur base de ces recherches)
+2. Trier les données (On peut trier les données des fichiers csv merger sur un tri asc ou dsc. On peut enregistrer ces tris de données dans un csv)
+3. Générer unn rapport global (On peut faire un rapport global sur base des fichiers csv merger)
 4. Quitter
