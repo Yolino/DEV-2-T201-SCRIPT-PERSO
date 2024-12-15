@@ -1,0 +1,5 @@
+Rapport Récapitulatif:
+====================
+Total des produits : 4
+Quantité totale : 110
+Valeur totale des stocks : 87998.90 EUR

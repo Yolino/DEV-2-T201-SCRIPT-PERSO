@@ -1,0 +1,25 @@
+Nom du produit,Quantite,Prix unitaire,Categorie
+Boeing 737,1,100000000,Avion
+Airbus A320,1,98000000,Avion
+Gulfstream G550,1,62000000,Avion
+Gulfstream G550,1,62000000,Avion
+Piper PA-28,3,350000,Avion
+Cessna 172,2,300000,Avion
+Ford Mustang,8,45000,Voiture
+BMW 3 Series,7,41000,Voiture
+BMW 3 Series,7,41000,Voiture
+Tesla Model 3,5,35000,Voiture
+Honda Civic,12,22000,Voiture
+Toyota Corolla,10,20000,Voiture
+Laptop,30,999.99,Electronique
+Smartphone,50,799.99,Electronique
+Camera,15,599.99,Electronique
+Camera,15,599.99,Electronique
+Tablet,40,499.99,Electronique
+Smartwatch,25,199.99,Electronique
+Jacket,25,89.99,Vetements
+Shoes,80,79.99,Vetements
+Shoes,80,79.99,Vetements
+Jeans,60,49.99,Vetements
+Sweater,40,29.99,Vetements
+T-shirt,100,19.99,Vetements
