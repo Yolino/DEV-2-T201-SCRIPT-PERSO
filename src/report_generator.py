@@ -61,7 +61,7 @@ def generate_report(manager, filter_type=None, filter_value=None, report_name=No
 
     elif output_format == 'csv':
         with open(report_path, mode='w', newline='', encoding='utf-8') as csv_file:
-            writer = csv.writer(csv_file, delimiter=';')
+            writer = csv.writer(csv_file, delimiter=',')
             writer.writerow(["Total des produits", "Quantite totale", "Valeur totale des stocks (EUR)"])
             writer.writerow([total_products, total_quantity, f"{total_value:.2f}"])
         print(f"Rapport généré dans le fichier : {report_path}")
