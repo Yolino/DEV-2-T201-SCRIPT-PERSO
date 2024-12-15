@@ -1,13 +1,18 @@
 import csv
 import os
 
-def generate_report(manager, filter_type=None, filter_value=None, report_name=None):
+
+def generate_report(manager, filter_type=None,
+                    filter_value=None, report_name=None):
     """
     Génère un rapport récapitulatif des données consolidées ou filtrées.
     :param manager: Instance de CsvManager pour accéder aux données.
-    :param filter_type: Type de filtre ('category', 'price_range', None pour tous les résultats).
-    :param filter_value: Valeur pour le filtre (ex : nom de catégorie ou plage de prix).
-    :param report_name: Nom du fichier de sortie. Si None, le programme demande un nom.
+    :param filter_type: Type de filtre
+    ('category', 'price_range', None pour tous les résultats).
+    :param filter_value: Valeur pour le filtre
+    (ex : nom de catégorie ou plage de prix).
+    :param report_name: Nom du fichier de sortie.
+    Si None, le programme demande un nom.
     """
     # Obtenir les données en fonction du filtre
     if filter_type == 'category':
@@ -17,7 +22,7 @@ def generate_report(manager, filter_type=None, filter_value=None, report_name=No
         data = manager.search_by_price_range(min_price, max_price)
     elif filter_type == 'search_results':
         data = filter_value
-    elif filter_type == 'sorted_data':
+    elif filter_type == 'sort_data':
         data = filter_value
     else:
         with open(manager.output_file, mode='r', encoding='utf-8') as file:
@@ -31,7 +36,8 @@ def generate_report(manager, filter_type=None, filter_value=None, report_name=No
     # Calcul des métriques
     total_products = len(data)
     total_quantity = sum(int(row['Quantite']) for row in data)
-    total_value = sum(float(row['Prix unitaire']) * int(row['Quantite']) for row in data)
+    total_value = sum(float(row['Prix unitaire']) *
+                      int(row['Quantite']) for row in data)
 
     # Générer le contenu du rapport
     report_content = (
@@ -48,7 +54,9 @@ def generate_report(manager, filter_type=None, filter_value=None, report_name=No
 
     # Demander le nom du fichier si non fourni
     if not report_name:
-        report_name = input("Entrez le nom du fichier de rapport (avec extension, ex: rapport.txt ou rapport.csv) : ").strip()
+        report_name = input("Entrez le nom du fichier de rapport"
+                            + " (avec extension, ex: rapport.txt "
+                            + "ou rapport.csv) : ").strip()
     report_path = os.path.join(report_folder, report_name)
 
     # Demander le format de sortie
@@ -60,11 +68,15 @@ def generate_report(manager, filter_type=None, filter_value=None, report_name=No
         print(f"Rapport généré dans le fichier : {report_path}")
 
     elif output_format == 'csv':
-        with open(report_path, mode='w', newline='', encoding='utf-8') as csv_file:
+        with open(report_path, mode='w', newline='',
+                  encoding='utf-8') as csv_file:
             writer = csv.writer(csv_file, delimiter=',')
-            writer.writerow(["Total des produits", "Quantite totale", "Valeur totale des stocks (EUR)"])
-            writer.writerow([total_products, total_quantity, f"{total_value:.2f}"])
+            writer.writerow(["Total des produits", "Quantite totale",
+                             "Valeur totale des stocks (EUR)"])
+            writer.writerow([total_products, total_quantity,
+                             f"{total_value:.2f}"])
         print(f"Rapport généré dans le fichier : {report_path}")
 
     else:
-        print("Extension de fichier non reconnue. Veuillez utiliser .txt ou .csv.")
+        print("Extension de fichier non reconnue. "
+              "Veuillez utiliser .txt ou .csv.")
